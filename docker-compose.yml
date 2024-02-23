@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  alfies_checker:
+    build: .
+    container_name: alfies-checker
+    volumes:
+      - ./main.py:/app/main.py
+    environment:
+      PUSHOVER_USER_KEY: 'your_user_key'
+      PUSHOVER_API_TOKEN: 'your_api_token'
+      ALFIES_COOKIE: 'your_cookie_value'
+    restart: unless-stopped
